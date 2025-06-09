@@ -1,4 +1,3 @@
-
 name: Run PW Tests
 
 on:
@@ -18,17 +17,20 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: '8.0.x' # change if you're using .NET 6/7/9
+        dotnet-version: '9.0' # change if you're using .NET 6/7/9
+
+    - name: Set CI environment variable
+      run: echo "CI=true" >> $GITHUB_ENV
 
     - name: Restore dependencies
       run: dotnet restore
 
-    - name: Build project (ignore warnings)
-      run: dotnet build --configuration Release --no-restore -p:TreatWarningsAsErrors=false
+    - name: Build project
+      run: dotnet build --configuration Release --no-restore
 
     - name: Install Playwright Browsers
       run: pwsh bin\Debug\net9.0\playwright.ps1 install --with-deps
-      # Update net8.0 to match your actual .NET Target Framework
+      # Update net9.0 to match your actual .NET Target Framework
 
     - name: Run NUnit + SpecFlow Tests
       run: dotnet test --no-build --logger "trx"
