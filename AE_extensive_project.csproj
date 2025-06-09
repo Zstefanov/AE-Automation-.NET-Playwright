@@ -4,12 +4,14 @@
     <TargetFramework>net9.0</TargetFramework>
     <LangVersion>latest</LangVersion>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>disable</Nullable>
+    <Nullable>enable</Nullable>
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
-	<PropertyGroup Condition="'$(CI)' == 'true'">
+	<PropertyGroup>
 		<TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+		<!-- OR suppress specific analyzer rules -->
+		<NoWarn>$(NoWarn);NUnit1033</NoWarn>
 	</PropertyGroup>
 
   <ItemGroup>

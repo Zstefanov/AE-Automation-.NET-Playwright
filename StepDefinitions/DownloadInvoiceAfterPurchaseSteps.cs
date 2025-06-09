@@ -10,7 +10,7 @@ namespace AE_extensive_project.StepDefinitions
     public class DownloadInvoiceAfterPurchaseSteps
     {
         private readonly TestFixtureBase _fixture;
-        private UserTestData user;
+        //private UserTestData user;
         private IDownload download;
 
         public DownloadInvoiceAfterPurchaseSteps(ScenarioContext context)

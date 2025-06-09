@@ -9,7 +9,7 @@ namespace AE_extensive_project.Tests_API
     public class PutToUpdateUserAccount : TestFixtureBase
     {
         //class-level instance so it can be used in all methods
-        private TestDataGenerator.UserTestData? user;
+        private TestDataGenerator.UserTestData user = new();
 
         //initialize a registration method to create user for updating(ensuring sustainability of the delete test)
         public async Task RegisterUser()
