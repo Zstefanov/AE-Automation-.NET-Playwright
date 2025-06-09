@@ -1,6 +1,6 @@
 ﻿This project is an automation project built with C#, NUnit, Playwright.
 
-The project is deployed to Jenkins(locally), Docker(locally) and GitHub Actions.
+The project is deployed to Jenkins, Docker(locally) and GitHub Actions.
 
 It has parameterized launch options for all types of browsers via CL:
 $env:BROWSER="browserType"; dotnet test
