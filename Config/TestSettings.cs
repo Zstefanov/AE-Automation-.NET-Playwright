@@ -1,6 +1,4 @@
-﻿
-
-namespace AE_extensive_project.Config
+﻿namespace AE_extensive_project.Config
 {
     //perhaps be implemented later on
     public class TestSettings

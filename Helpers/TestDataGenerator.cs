@@ -7,23 +7,22 @@ namespace AE_extensive_project.TestData
     {
         public class UserTestData
         {
-            public static readonly Faker faker = new Faker();
-            public string FirstName { get; set; }
-            public string LastName { get; set; }
-            public string Title {  get; set; }
+            public string FirstName { get; set; } = string.Empty;
+            public string LastName { get; set; } = string.Empty;
+            public string Title { get; set; } = string.Empty;
             public int BirthYear { get; set; }
-            public int BirthMonth {  get; set; }
+            public int BirthMonth { get; set; }
             public int BirthDay { get; set; }
-            public string Email { get; set; }
-            public string Password { get; set; }
-            public string Company { get; set; }
-            public string MobileNumber { get; set; }
-            public string Address1 { get; set; }
-            public string Address2 { get; set; }
-            public string Country { get; set; }
-            public string State {get; set;}
-            public string City { get; set; }
-            public string Zipcode { get; set; }
+            public string Email { get; set; } = string.Empty;
+            public string Password { get; set; } = string.Empty;
+            public string Company { get; set; } = string.Empty;
+            public string MobileNumber { get; set; } = string.Empty;
+            public string Address1 { get; set; } = string.Empty;
+            public string Address2 { get; set; } = string.Empty;
+            public string Country { get; set; } = string.Empty;
+            public string State { get; set; } = string.Empty;
+            public string City { get; set; } = string.Empty;
+            public string Zipcode { get; set; } = string.Empty;
 
         }
         public static UserTestData GenerateUser()
