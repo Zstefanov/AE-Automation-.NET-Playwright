@@ -21,7 +21,7 @@ jobs:
     - name: Build project
       run: dotnet build --configuration Release --no-restore --verbosity normal /p:TreatWarningsAsErrors=false
     - name: Install Playwright Browsers
-      run: pwsh bin\Debug\net9.0\playwright.ps1 install --with-deps
+      run: pwsh bin\Release\net9.0\playwright.ps1 install --with-deps
       # Update net9.0 to match your actual .NET Target Framework
     - name: Run NUnit + SpecFlow Tests
       run: dotnet test --no-build --logger "trx" --verbosity normal
