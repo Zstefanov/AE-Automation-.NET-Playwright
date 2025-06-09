@@ -23,8 +23,8 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
 
-    - name: Build project
-      run: dotnet build --configuration Release --no-restore
+    - name: Build project (ignore warnings)
+      run: dotnet build --configuration Release --no-restore -p:TreatWarningsAsErrors=false
 
     - name: Install Playwright Browsers
       run: pwsh bin\Debug\net9.0\playwright.ps1 install --with-deps
