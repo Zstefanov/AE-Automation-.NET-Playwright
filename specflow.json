@@ -1,0 +1,12 @@
+﻿{
+  "language": {
+    "feature": "en"
+  },
+  "bindingCulture": {
+    "name": "en"
+  },
+  "generator": {
+    "allowDebugGeneratedFiles": true,
+    "generateAsyncBindings": true
+  }
+}

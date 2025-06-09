@@ -1,0 +1,1 @@
+﻿A random .txt file to be uploaded to site(e.g. Contact us form) -> will be used as a hardcoded path.

@@ -1,0 +1,14 @@
+﻿[
+  {
+    "SearchTerm": "Blue Top",
+    "ExpectedResult": true
+  },
+  {
+    "SearchTerm": "Men Tshirt",
+    "ExpectedResult": true
+  },
+  {
+    "SearchTerm": "1234INVALID",
+    "ExpectedResult": false
+  }
+]
