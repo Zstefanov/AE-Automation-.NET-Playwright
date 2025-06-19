@@ -38,6 +38,19 @@ namespace AE_extensive_project.Tests_API
             {
                 TestContext.WriteLine($"Product ID: {product.Id}, Name: {product.Name}, Price: {product.Price}");
             }
+
+            using var db = GetDbContext();
+            //clean db before injecting new products for test purposes
+            db.Products.RemoveRange(productList.Products);
+
+            foreach (var product in productList.Products)
+            {
+                //set Id to 0 so it will be auto-incremented
+                product.Id = 0;
+                db.Products.Add(product);
+            }
+
+            await db.SaveChangesAsync();
         }
     }
 }

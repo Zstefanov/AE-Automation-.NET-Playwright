@@ -1,4 +1,6 @@
 ﻿using AE_extensive_project.Config;
+using AE_extensive_project.Database;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Playwright;
 using static AE_extensive_project.TestData.TestDataGenerator;
@@ -132,6 +134,14 @@ namespace AE_extensive_project.TestFixture
         {
             //text-based
             await Page.ClickAsync("text=Logout");
+        }
+
+        // instance of dbcontext for database operations
+        public TestDbContext GetDbContext()
+        {
+            var optionsBuilder = new DbContextOptionsBuilder<TestDbContext>();
+            optionsBuilder.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+            return new TestDbContext(optionsBuilder.Options);
         }
     }
 }

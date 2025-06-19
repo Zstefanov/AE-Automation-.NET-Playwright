@@ -18,6 +18,8 @@ A "CommonSteps.cs" file is created to avoid ambiguity of repeating steps in feat
 Based on the fact that all login credentials and data is created purely for test purposes, 
 config files, appsettings with login credentials are uploaded as well. 
 
+ORM- .
+
 The project covers a test website: https://automationexercise.com and the following test cases:
 Test Case 1-26 are covered by a feature file (SpecFlow) located in the features dir.
 

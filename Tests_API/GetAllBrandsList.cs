@@ -1,5 +1,6 @@
 ﻿using AE_extensive_project.TestFixture;
 using System.Text.Json;
+using AE_extensive_project.Models;
 
 
 namespace AE_extensive_project.Tests_API
@@ -33,12 +34,34 @@ namespace AE_extensive_project.Tests_API
 
             //print all items
             TestContext.WriteLine($"Total Brands: {brands.GetArrayLength()}");
+
+            var brandEntities = new List<Brand>();
+
             foreach (var brand in brands.EnumerateArray())
             {
                 var id = brand.GetProperty("id").GetInt32();
                 var name = brand.GetProperty("brand").GetString();
                 TestContext.WriteLine($"Brand ID: {id}, Name: {name}");
+
+                //collect brand data
+                brandEntities.Add(new Brand
+                {
+                    Name = name ?? string.Empty //handle null case
+                });
             }
+
+            using var db = GetDbContext();
+
+            //clean db before injecting new brands for test purposes
+            var existing = db.Brands.ToList();
+            db.Brands.RemoveRange(existing);
+            await db.SaveChangesAsync();
+
+            //add the new brands
+            await db.Brands.AddRangeAsync(brandEntities);
+            await db.SaveChangesAsync();
+
+            TestContext.WriteLine("Brands successfully added to the database.");
         }
     }
 }
