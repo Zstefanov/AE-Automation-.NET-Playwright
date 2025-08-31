@@ -20,7 +20,8 @@ config files, appsettings with login credentials are uploaded as well.
 
 ORM Implementation -> EFC used to create a local db, save data into it using API calls.
 
-Load testing to be implemented with Nbomber in a sister project.
+Load testing to be implemented with Nbomber in a sister project here: 
+https://github.com/Zstefanov/AE-Automation-.NET-NBomber
 
 The project covers a test website: https://automationexercise.com and the following test cases:
 Test Case 1-26 are covered by a feature file (SpecFlow) located in the features dir.
